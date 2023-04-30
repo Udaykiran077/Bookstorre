@@ -1,0 +1,60 @@
+{% load static %}
+
+
+<link rel="stylesheet" href="{%static 'style2.css' %}">
+<div class="container"> 
+    {% csrf_token %}
+    
+    <!DOCTYPE html>
+<html>
+  <head>
+    <title> REGISTRATION FORM </title>
+    
+  </head>
+  <body>
+    
+    <div class="main-block">
+      <div class="left-part">
+        <i class="fas fa-graduation-cap"></i>
+        <h1>LOGIN</h1>
+        <p>LOGIN WITH USER NAME AND PASSWORD</p>
+       
+      </div>
+      <form action="login" method="post">
+        {% csrf_token %}
+        
+        <div class="title">
+          <i class="fas fa-pencil-alt"></i> 
+          <h2>Login here</h2>
+        </div>
+        <div class="info">
+          
+          <input type="text" name="username" placeholder="Username">
+          
+          <input type="password" name="password1" placeholder="Password">
+
+          <input type="submit">
+          
+        </div>
+        
+        
+        {% for message in messages %}
+        <h3> {{message}} </h3>
+        {% endfor %}
+      </div>
+        
+      </form>
+    </div>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+  </div>
